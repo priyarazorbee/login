@@ -1,1 +1,0 @@
-let rootURL = "http://localhost/event-management/simha/api/";

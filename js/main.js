@@ -1,21 +1,13 @@
-
-
-
-
 $(document).ready(function() { 
-
-
 $("#upload").submit(function(e){
 		var formData = new FormData($(this)[0]);
-    debugger;
-    console.log('hi');
-e.preventDefault();
+  e.preventDefault();
   $.ajax({
     url: rootURL +'signup',
     type: "POST",
     data: formData,
     success: function (msg) {
-      alert(msg)
+      window.location = 'login.php';
     },
     cache: false,
     contentType: false,
