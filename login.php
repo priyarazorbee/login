@@ -9,25 +9,10 @@
   
 
   <title>Login</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="js/config.js"></script>
-   <script>
-    var url = "js/config.js";
-    
-    $.getScript(url, function(){
-        $(document).ready(function(){
-            console.log(rootURL); // Prints: Hi there!
-            
-        });
-    });
-    </script>
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/config.js"></script>
 </head>
 
 <body class="bg-gradient-primary">
@@ -78,10 +63,10 @@
 
                   
                   <div class="text-center">
-                    <a class="small" href="forgot-password.html">Forgot Password?</a>
+                    <a class="small" href="forgot-password.php">Forgot Password?</a>
                   </div>
                   <div class="text-center">
-                    <a class="small" href="register.html">Create an Account!</a>
+                    <a class="small" href="register.php">Create an Account!</a>
                   </div>
                 </div>
               </div>
@@ -94,7 +79,7 @@
     </div>
 
   </div>
-<script src="js/main.js"></script>
+<script src="js/login.js"></script>
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

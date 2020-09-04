@@ -25,7 +25,7 @@ function login(){
 			if($row > 0) {
                 
 				$_SESSION['user'] = $fetch['user_id'];
-			
+			echo $fetch;
                  
 			} else{
 				echo "enter valid username and password";
@@ -48,8 +48,10 @@ function signup(){
 				$sql = "INSERT INTO `users` VALUES ('', '$firstname', '$lastname', '$username','$email', '$password')";
 				$db->exec($sql);
                 $db = null;
-			     header('location:login.php');
-			         }catch(PDOException $e){
+			    echo '{"success":{"status":"Registered"}}';
+        } 
+			         }
+    catch(PDOException $e){
 				echo $e->getMessage();
 			}
 	

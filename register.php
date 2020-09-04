@@ -10,24 +10,11 @@
 
   <title>Register</title>
 
-  <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
+   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="js/config.js"></script>
-   <script>
-    var url = "js/config.js";
-    
-    $.getScript(url, function(){
-        $(document).ready(function(){
-            console.log(rootURL); // Prints: Hi there!
-            
-        });
-    });
-    </script>
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/config.js"></script>
+
 </head>
 
 <body class="bg-gradient-primary">
@@ -44,7 +31,7 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
               </div>
-              <form id="upload">
+              <form id="signup">
                 <div class="form-group row">
                     
                   <div class="col-sm-6 mb-3 mb-sm-0">
@@ -99,7 +86,7 @@
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-   <script src="js/main.js"></script>
+   <script src="js/login.js"></script>
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
