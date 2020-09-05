@@ -10,11 +10,12 @@
 
   <title>Register</title>
 
-   <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <script src="js/jquery-1.10.2.js"></script>
-  <script src="js/config.js"></script>
 
+  <!-- Custom styles for this template-->
+  <link href="css/admin.css" rel="stylesheet">
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/config.js"></script>
+   
 </head>
 
 <body class="bg-gradient-primary">
@@ -31,29 +32,30 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
               </div>
-              <form id="signup">
+              <form id="upload">
+                 <p id="error"></p> 
                 <div class="form-group row">
                     
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user"  name="firstname" id="First Name" placeholder="First Name">
+                    <input type="text" class="form-control form-control-user"  name="firstname" id="First Name" placeholder="First Name" required>
                   </div>
 
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" name="lastname" id="lastName" placeholder="Last Name">
+                    <input type="text" class="form-control form-control-user" name="lastname" id="lastName" placeholder="Last Name" required>
                   </div>
                 </div>
                   <div class="form-group">
-                  <input type="text" class="form-control form-control-user" name="username" id="username" placeholder="Username">
+                  <input type="text" class="form-control form-control-user" name="username" id="username" placeholder="Username" required>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" name="email" id="email" placeholder="Email Address">
+                  <input type="email" class="form-control form-control-user" name="email" id="email" placeholder="Email Address" required>
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Password">
+                    <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Password" required>
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" name="repeat-password" id="repeatPassword" placeholder="Repeat Password">
+                    <input type="password" class="form-control form-control-user" name="repeat-password" id="repeatPassword" placeholder="Repeat Password" required>
                   </div>
                 </div>
                 <input type="submit" class="btn btn-primary form-control" name="register">

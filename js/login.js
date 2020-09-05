@@ -1,5 +1,5 @@
 $(document).ready(function() { 
-$("#signup").submit(function(e){
+$("#upload").submit(function(e){
 		var formData = new FormData($(this)[0]);
   e.preventDefault();
   $.ajax({
@@ -9,10 +9,10 @@ $("#signup").submit(function(e){
     success: function (msg) {
       window.location = 'login.php';
     },
-     error: function (msg) {
-      alert('Please fill all fields');
-    }, 
-    cache: false,   
+      error: function (msg) {
+      document.getElementById("error").innerHTML = "Please fill the field";
+    },
+    cache: false,
     contentType: false,
     processData: false
   });
@@ -26,10 +26,10 @@ e.preventDefault();
     type: "POST",
     data: formData,
     success: function (msg) {
-     window.location = 'http://localhost/event-management/login/home.php';
+     window.location = 'home.php';
     },
-      error: function (msg) {
-      alert('Usernae or password dont match');
+       error: function (msg) {
+      document.getElementById("error").innerHTML = "Please fill the field";
     },
     cache: false,
     contentType: false,

@@ -25,10 +25,10 @@ function login(){
 			if($row > 0) {
                 
 				$_SESSION['user'] = $fetch['user_id'];
-			echo $fetch;
+			 echo '{"success":{"text":"session started"}}';
                  
 			} else{
-				echo "enter valid username and password";
+				 echo '{"error":{"text":"please fill the details"}}';
 			}
  
 		}
@@ -48,10 +48,8 @@ function signup(){
 				$sql = "INSERT INTO `users` VALUES ('', '$firstname', '$lastname', '$username','$email', '$password')";
 				$db->exec($sql);
                 $db = null;
-			    echo '{"success":{"status":"Registered"}}';
-        } 
-			         }
-    catch(PDOException $e){
+			      echo '{"success":{"text":"saved"}}';
+			         }catch(PDOException $e){
 				echo $e->getMessage();
 			}
 	

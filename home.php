@@ -5,7 +5,6 @@
 	
 	if(!ISSET($_SESSION['user'])){
 		header('location:login.php');
-        echo "hi";
 	}
 ?>
 <html lang="en">
@@ -70,7 +69,7 @@ div.transbox p {
 			<?php echo $fetch['firstname']." ". $fetch['lastname']?></h3>
       <p class="success">You have successfully logged in.<br/>Thank you for choosing our team.</p>
       <button class="success1"><a href = "index.php">Dashboard</a></button>
-		 <button class="success1"><a href = "logout.php">Logout</a></button>
+		
 		</div>
 	</div>
 </body>
