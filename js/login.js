@@ -1,17 +1,26 @@
 $(document).ready(function() { 
-$("#upload").submit(function(e){
+    
+$("#signin").submit(function(e){
 		var formData = new FormData($(this)[0]);
+
   e.preventDefault();
   $.ajax({
     url: rootURL +'signup',
     type: "POST",
     data: formData,
-    success: function (msg) {
-      window.location = 'login.php';
-    },
-      error: function (msg) {
-      document.getElementById("error").innerHTML = "Please fill the field";
-    },
+     dataType : 'json', 
+    success: function(data){
+       
+            $('#result').html(data.status +':' + data.message);   
+            $("#result").addClass('msg_notice');
+            $("#result").fadeIn(1500);           
+      },
+      error:function(){
+          $("#result").html('There was an error updating the settings');
+          $("#result").addClass('msg_error');
+          $("#result").fadeIn(1500);
+      } ,  
+
     cache: false,
     contentType: false,
     processData: false
@@ -25,12 +34,18 @@ e.preventDefault();
     url: rootURL +'login',
     type: "POST",
     data: formData,
-    success: function (msg) {
-     window.location = 'home.php';
-    },
-       error: function (msg) {
-      document.getElementById("error").innerHTML = "Please fill the field";
-    },
+    dataType : 'json', 
+    success: function(data){
+       
+            $('#result').html(data.status +':' + data.message);   
+            $("#result").addClass('msg_notice');
+            $("#result").fadeIn(1500);           
+      },
+      error:function(){
+          $("#result").html('There was an error updating the settings');
+          $("#result").addClass('msg_error');
+          $("#result").fadeIn(1500);
+      } ,  
     cache: false,
     contentType: false,
     processData: false
