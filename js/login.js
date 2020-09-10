@@ -1,18 +1,27 @@
 $(document).ready(function() { 
-$("#signup").submit(function(e){
+    
+$("#signin").submit(function(e){
 		var formData = new FormData($(this)[0]);
+
   e.preventDefault();
   $.ajax({
     url: rootURL +'signup',
     type: "POST",
     data: formData,
-    success: function (msg) {
-      window.location = 'login.php';
-    },
-     error: function (msg) {
-      alert('Please fill all fields');
-    }, 
-    cache: false,   
+     dataType : 'json', 
+    success: function(data){
+       
+            $('#result').html(data.status +':' + data.message);   
+            $("#result").addClass('msg_notice');
+            $("#result").fadeIn(1500);           
+      },
+      error:function(){
+          $("#result").html('There was an error updating the settings');
+          $("#result").addClass('msg_error');
+          $("#result").fadeIn(1500);
+      } ,  
+
+    cache: false,
     contentType: false,
     processData: false
   });
@@ -25,12 +34,18 @@ e.preventDefault();
     url: rootURL +'login',
     type: "POST",
     data: formData,
-    success: function (msg) {
-     window.location = 'http://localhost/event-management/login/home.php';
-    },
-      error: function (msg) {
-      alert('Usernae or password dont match');
-    },
+    dataType : 'json', 
+    success: function(data){
+       
+            $('#result').html(data.status +':' + data.message);   
+            $("#result").addClass('msg_notice');
+            $("#result").fadeIn(1500);           
+      },
+      error:function(){
+          $("#result").html('There was an error updating the settings');
+          $("#result").addClass('msg_error');
+          $("#result").fadeIn(1500);
+      } ,  
     cache: false,
     contentType: false,
     processData: false

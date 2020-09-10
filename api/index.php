@@ -14,7 +14,7 @@ function login(){
     session_start();
      $db = getDB();
 			$username = $_REQUEST['username'];
-			$password = $_POST['password'];
+			$password = md5($_POST['password']);
 			$sql = "SELECT * FROM `users` WHERE (username=:username or email=:username) AND password=:password ";
 			$query = $db->prepare($sql);
 			$query->bindValue(":username", $username, PDO::PARAM_STR);
@@ -25,10 +25,11 @@ function login(){
 			if($row > 0) {
                 
 				$_SESSION['user'] = $fetch['user_id'];
-			echo $fetch;
+			echo json_encode(array('status' => 'success','message'=> 'Logged in Successfully'));
                  
 			} else{
-				echo "enter valid username and password";
+               echo json_encode(array('status' => 'error','message'=> 'Please register')); 
+				
 			}
  
 		}
@@ -36,21 +37,52 @@ function login(){
 
 function signup(){
   	try{
+       
                 $db = getDB();
-				$firstname = $_POST['firstname'];
-				$lastname = $_POST['lastname'];
-				$username = $_POST['username'];
-                $email = $_POST['email'];
-//				$enc_password = hash('sha256', $_POST['password']);
-//              $password= $enc_password;
-                $password = $_POST['password'];
-				$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				$sql = "INSERT INTO `users` VALUES ('', '$firstname', '$lastname', '$username','$email', '$password')";
-				$db->exec($sql);
-                $db = null;
-			    echo '{"success":{"status":"Registered"}}';
-        } 
-			         }
+				$firstname=$_POST['firstname']; 
+     $lastname=$_POST['lastname'];    
+$username=$_POST['username']; 
+$email=$_POST['email']; 
+
+$password=md5($_POST['password']);
+
+// Query for validation of username and email-id
+$ret="SELECT * FROM users where (username=:username ||  email=:email)";
+$queryt = $db -> prepare($ret);
+$queryt->bindParam(':email',$email,PDO::PARAM_STR);
+$queryt->bindParam(':username',$username,PDO::PARAM_STR);
+$queryt -> execute();
+$results = $queryt -> fetchAll(PDO::FETCH_OBJ);
+if($queryt -> rowCount() == 0)
+{
+// Query for Insertion
+$sql="INSERT INTO users(firstname,lastname,username,email,password) VALUES(:firstname,:lastname,:username,:email,:password)";
+$query = $db->prepare($sql);
+// Binding Post Values
+$query->bindParam(':firstname',$firstname,PDO::PARAM_STR);
+$query->bindParam(':lastname',$lastname,PDO::PARAM_STR);    
+$query->bindParam(':username',$username,PDO::PARAM_STR);
+$query->bindParam(':email',$email,PDO::PARAM_STR);
+$query->bindParam(':password',$password,PDO::PARAM_STR);
+$query->execute();
+$lastInsertId = $db->lastInsertId();
+if($lastInsertId)
+{
+
+        echo json_encode(array('status' => 'success','message'=> 'Registered Successfully'));
+}
+else 
+{
+    echo json_encode(array('status' => 'error','message'=> 'Something went wrong.Please try again'));
+
+                     }
+}
+ else
+{
+ echo json_encode(array('status' => 'error','message'=> 'Username or Email-id already exist. Please try again'));   
+}
+			         
+    }
     catch(PDOException $e){
 				echo $e->getMessage();
 			}

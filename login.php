@@ -9,10 +9,13 @@
   
 
   <title>Login</title>
+
+
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <script src="js/jquery-1.10.2.js"></script>
-  <script src="js/config.js"></script>
+  <link href="css/admin.css" rel="stylesheet">
+    <script src="js/jquery-1.10.2.js"></script>
+<script src="js/config.js"></script>
+   
 </head>
 
 <body class="bg-gradient-primary">
@@ -28,18 +31,19 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-              <div class="col-lg-6">
+             
+              <div class="col-lg-12">
                 <div class="p-5">
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                   </div>
                   <form id="login">
+                      <div id ="result"></div>
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" name="username" id="userName" autocomplete="off"  placeholder="Enter Username...">
+                      <input type="text" class="form-control form-control-user" name="username" id="userName" autocomplete="off"  placeholder="Enter Username/Email" required >
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" name="password" id="password" autocomplete="off" placeholder="Password">
+                      <input type="password" class="form-control form-control-user" name="password" id="password" autocomplete="off" placeholder="Password" required>
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
