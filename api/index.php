@@ -8,6 +8,8 @@ require 'config.php';
 $app = new \Slim\Slim();
 $app->post('/login','login'); /* User login */
 $app->post('/signup','signup'); /* User Signup  */
+$app->post('/username','username');
+$app->post('/email','email');
 $app->run();
 function login(){
   
@@ -90,7 +92,46 @@ else
 			
 		}
 		
+function username() {
+    $db = getDB();
+            $username = $_POST['username'];
+   
+			$sql = "SELECT username FROM users WHERE username=:username ";
+			
+			$stmt = $db->prepare($sql);
+            $stmt->bindParam("username", $username,PDO::PARAM_STR);
+            $stmt->execute();
+            $mainCount=$stmt->rowCount();
+          
+            if($mainCount==0)
+{
+   
+echo json_encode(array('status' => 'success','message'=> 'Username available for Registration.'));
+} else{	
 
+                echo json_encode(array('status' => 'error','message'=> 'Username already exists.'));
+}
+}
+
+// Code for checking email availabilty
+function email() {
+    $db = getDB();
+$email= $_POST["email"];
+$sql ="SELECT email FROM  users WHERE email=:email";
+$query= $db -> prepare($sql);
+$query-> bindParam(':email', $email, PDO::PARAM_STR);
+$query-> execute();
+$results = $query -> fetchAll(PDO::FETCH_OBJ);
+if($query -> rowCount() > 0)
+{
+           echo json_encode(array('status' => 'error','message'=> 'Email-id already exists.'));
+
+} 
+    else{
+        echo json_encode(array('status' => 'success','message'=> 'Email-id available for Registration..'));
+
+}
+}
 
 
 
