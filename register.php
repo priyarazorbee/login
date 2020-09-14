@@ -31,53 +31,41 @@
               <form id="register" name="forms">
                 <div id ="result"></div>
                 <div class="form-group row">
-                    
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" class="form-control form-control-user" pattern="[a-zA-Z\s]+" name="firstname"  placeholder="First Name" required>
-                     
-                  </div>
-
-                  <div class="col-sm-6">
+                   </div>
+                    <div class="col-sm-6">
                     <input type="text" class="form-control form-control-user" name="lastname" placeholder="Last Name" required>
-                     
                   </div>
                 </div>
                   <div class="form-group">
                   <input type="text" class="form-control form-control-user" id= "username" onkeyup="checkUsernameAvailability()"  pattern="^[a-zA-Z][a-zA-Z0-9-_.]{5,12}$" name="username" placeholder="Username" required>
                     <span id="username-availability-status" style="font-size:12px;"></span>  
-                   <p class="help-block">Username can contain any letters or numbers, without spaces 6 to 12 chars </p> 
-                </div>
+                  </div>
                 <div class="form-group">
                   <input type="email" class="form-control form-control-user" name="email" id="email" placeholder="Enter your email address" onkeyup="checkEmailAvailability()" class="input-xlarge" required>
                  <span id="email-availability-status" style="font-size:12px;"></span> 
-                 <p class="help-block">Please provide your E-mail</p>
                   </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="password" class="form-control form-control-user" name="password"  placeholder="Password" required>
-                     <p class="help-block">Please provide your Password</p>
                   </div>
                   <div class="col-sm-6">
                     <input type="password" class="form-control form-control-user" name="repassword" onkeyup="password_valid()"   placeholder="Repeat Password" required>
                      <span id="passwords" style="font-size:12px;"></span>  
-                    <p class="help-block">Please Repeat your password</p> 
-                      
                   </div>
                 </div>
                 <input type="submit" class="btn btn-primary form-control" name="register">
-
-                <hr>
+                  <hr>
                 <a href="home.php" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> Register with Google
                 </a>
                 <a href="home.php" class="btn btn-facebook btn-user btn-block">
                   <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
                 </a>
-                  
               </form>
               <hr>
-
-              <div class="text-center">
+                <div class="text-center">
                 <a class="small" href="forgot-password.php">Forgot Password?</a>
               </div>
 

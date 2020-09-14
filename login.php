@@ -6,15 +6,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
-
   <title>Login</title>
-
-
-  <!-- Custom styles for this template-->
   <link href="css/admin.css" rel="stylesheet">
-    <script src="js/jquery-1.10.2.js"></script>
-<script src="js/config.js"></script>
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/config.js"></script>
    
 </head>
 
@@ -40,7 +35,7 @@
                   <form id="login">
                       <div id ="result"></div>
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" name="username" id="userName" autocomplete="off"  placeholder="Enter Username/Email" required >
+                      <input type="text" class="form-control form-control-user" name="username" id="username" autocomplete="off"  placeholder="Enter Username/Email" required >
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" name="password" id="password" autocomplete="off" placeholder="Password" required>
@@ -52,21 +47,15 @@
                       </div>
                     </div>
                    <button class="btn btn-primary form-control" name="login">Login</button>
-                      
-                    
                     <hr>
-
                     <a href="index.php" class="btn btn-google btn-user btn-block">
                       <i class="fab fa-google fa-fw"></i> Login with Google
                     </a>
                     <a href="index.php" class="btn btn-facebook btn-user btn-block">
                       <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                     </a>
-
-                  </form>
-
-                  
-                  <div class="text-center">
+                </form>
+                <div class="text-center">
                     <a class="small" href="forgot-password.php">Forgot Password?</a>
                   </div>
                   <div class="text-center">

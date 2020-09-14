@@ -1,10 +1,10 @@
 $(document).ready(function() { 
     
-$("#signin").submit(function(e){
+$("#register").submit(function(e){
 		var formData = new FormData($(this)[0]);
         e.preventDefault();
   $.ajax({
-        url: rootURL +'signup',
+        url: rootURL +'register',
         type: "POST",
         data: formData,
         dataType : 'json', 

@@ -7,7 +7,7 @@ require 'config.php';
 \Slim\Slim::registerAutoloader();
 $app = new \Slim\Slim();
 $app->post('/login','login'); /* User login */
-$app->post('/signup','signup'); /* User Signup  */
+$app->post('/register','register'); /* User Signup  */
 $app->post('/username','username');
 $app->post('/email','email');
 $app->run();
@@ -37,7 +37,7 @@ function login(){
 		}
 
 
-function signup(){
+function register(){
   	try{
        
                 $db = getDB();
