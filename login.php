@@ -10,7 +10,7 @@
   <link href="css/admin.css" rel="stylesheet">
   <script src="js/jquery-1.10.2.js"></script>
   <script src="js/config.js"></script>
-   
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body class="bg-gradient-primary">
@@ -33,7 +33,10 @@
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                   </div>
                   <form id="login">
-                      <div id ="result"></div>
+                    <div id ="result"></div>
+                     <div id="loading">
+                       <img id="loading-image" src="img/45.gif" alt="Loading..." />
+                     </div>
                     <div class="form-group">
                       <input type="text" class="form-control form-control-user" name="username" id="username" autocomplete="off"  placeholder="Enter Username/Email" required >
                     </div>
@@ -47,6 +50,7 @@
                       </div>
                     </div>
                    <button class="btn btn-primary form-control" name="login">Login</button>
+<!--
                     <hr>
                     <a href="index.php" class="btn btn-google btn-user btn-block">
                       <i class="fab fa-google fa-fw"></i> Login with Google
@@ -54,10 +58,13 @@
                     <a href="index.php" class="btn btn-facebook btn-user btn-block">
                       <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                     </a>
+-->
                 </form>
+<!--
                 <div class="text-center">
                     <a class="small" href="forgot-password.php">Forgot Password?</a>
                   </div>
+-->
                   <div class="text-center">
                     <a class="small" href="register.php">Create an Account!</a>
                   </div>

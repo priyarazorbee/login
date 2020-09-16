@@ -11,7 +11,7 @@
   <link href="css/admin.css" rel="stylesheet">
   <script src="js/jquery-1.10.2.js"></script>
   <script src="js/config.js"></script>
-
+ <link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body class="bg-gradient-primary">
@@ -30,6 +30,9 @@
               </div>
               <form id="register" name="forms">
                 <div id ="result"></div>
+                  <div id="loading">
+                    <img id="loading-image" src="img/45.gif" alt="Loading..." />
+                  </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" class="form-control form-control-user" pattern="[a-zA-Z\s]+" name="firstname"  placeholder="First Name" required>
@@ -39,11 +42,11 @@
                   </div>
                 </div>
                   <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id= "username" onkeyup="checkUsernameAvailability()"  pattern="^[a-zA-Z][a-zA-Z0-9-_.]{5,12}$" name="username" placeholder="Username" required>
-                    <span id="username-availability-status" style="font-size:12px;"></span>  
+                  <input type="text" class="form-control form-control-user" id= "username" change="checkUsernameAvailability()"  pattern="^[a-zA-Z][a-zA-Z0-9-_.]{5,12}$" name="username" placeholder="Username" required>
+                    <div id="username-availability"></div>  
                   </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" name="email" id="email" placeholder="Enter your email address" onkeyup="checkEmailAvailability()" class="input-xlarge" required>
+                  <input type="email" class="form-control form-control-user" name="email" id="email" placeholder="Enter your email address" change="checkEmailAvailability()" class="input-xlarge" required>
                  <span id="email-availability-status" style="font-size:12px;"></span> 
                   </div>
                 <div class="form-group row">
@@ -51,23 +54,27 @@
                     <input type="password" class="form-control form-control-user" name="password"  placeholder="Password" required>
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" name="repassword" onkeyup="password_valid()"   placeholder="Repeat Password" required>
+                    <input type="password" class="form-control form-control-user" name="repassword" change="password_valid()"   placeholder="Repeat Password" required>
                      <span id="passwords" style="font-size:12px;"></span>  
                   </div>
                 </div>
                 <input type="submit" class="btn btn-primary form-control" name="register">
-                  <hr>
+<!--                  <hr>-->
+<!--
                 <a href="home.php" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> Register with Google
                 </a>
                 <a href="home.php" class="btn btn-facebook btn-user btn-block">
                   <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
                 </a>
+-->
               </form>
-              <hr>
+<!--              <hr>-->
+<!--
                 <div class="text-center">
                 <a class="small" href="forgot-password.php">Forgot Password?</a>
               </div>
+-->
 
               <div class="text-center">
                 <a class="small" href="login.php">Already have an account? Login!</a>
@@ -81,11 +88,9 @@
   
 
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-   <script src="js/login.js"></script>
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="js/login.js"></script>
+
 
   
  
