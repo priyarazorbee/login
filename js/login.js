@@ -44,7 +44,7 @@ $("#login").submit(function(e){
         }, 1000);
             $('#result').html(data.message);   
              $("#result").css("color", data.color);  
-         window.location.href = "home.php";
+         //window.location.href = "home.php";
       },
     error:function(){
            setTimeout(function(){

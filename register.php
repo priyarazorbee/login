@@ -42,11 +42,11 @@
                   </div>
                 </div>
                   <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id= "username" change="checkUsernameAvailability()"  pattern="^[a-zA-Z][a-zA-Z0-9-_.]{5,12}$" name="username" placeholder="Username" required>
-                    <div id="username-availability"></div>  
+                  <input type="text" class="form-control form-control-user" id= "username" onkeyup="checkUsernameAvailability()"  pattern="^[a-zA-Z][a-zA-Z0-9-_.]{5,12}$" name="username" placeholder="Username" required>
+                    <div id="username-availability"  style="font-size:12px;"></div>  
                   </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" name="email" id="email" placeholder="Enter your email address" change="checkEmailAvailability()" class="input-xlarge" required>
+                  <input type="email" class="form-control form-control-user" name="email" id="email" placeholder="Enter your email address" onkeyup="checkEmailAvailability()" class="input-xlarge" required>
                  <span id="email-availability-status" style="font-size:12px;"></span> 
                   </div>
                 <div class="form-group row">
@@ -54,7 +54,7 @@
                     <input type="password" class="form-control form-control-user" name="password"  placeholder="Password" required>
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" name="repassword" change="password_valid()"   placeholder="Repeat Password" required>
+                    <input type="password" class="form-control form-control-user" name="repassword" onkeyup="password_valid()"   placeholder="Repeat Password" required>
                      <span id="passwords" style="font-size:12px;"></span>  
                   </div>
                 </div>
